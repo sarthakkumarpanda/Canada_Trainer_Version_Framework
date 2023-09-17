@@ -29,7 +29,7 @@ public class RegisterTest extends TestBase{
 		registerpage = landingpage.navigateToRegisterPage();
 	}
 	
-	@Test(priority=1, enabled=false)
+	@Test(priority=1)
 	public void verifyRegisterWithMandatoryDetails() {
 		accountsuccesspage = registerpage.RegisterMandatoryFields(dataprop.getProperty("firstname"), dataprop.getProperty("lastname"), 
 				Util.emailWithDateTimeStamp(), dataprop.getProperty("telephone"), 
@@ -38,7 +38,7 @@ public class RegisterTest extends TestBase{
 		Assert.assertTrue(accountsuccesspage.displayStatusOfAccountCreatedSuccessfullyMessage());	
 	}
 	
-	@Test(priority=2, enabled=false)
+	@Test(priority=2)
 	public void verifyRegisterWithAllDetails() {
 		accountsuccesspage = registerpage.RegisterAllFields(dataprop.getProperty("firstname"), dataprop.getProperty("lastname"), 
 				Util.emailWithDateTimeStamp(), dataprop.getProperty("telephone"), 
@@ -47,7 +47,7 @@ public class RegisterTest extends TestBase{
 		Assert.assertTrue(accountsuccesspage.displayStatusOfAccountCreatedSuccessfullyMessage());	
 	}
 	
-	@Test(priority=3, enabled=false)
+	@Test(priority=3)
 	public void verifyRegisterWithExistingEmail() {
 		registerpage.RegisterAllFields(dataprop.getProperty("firstname"), dataprop.getProperty("lastname"), 
 				prop.getProperty("validEmail"), dataprop.getProperty("telephone"), 
@@ -57,7 +57,7 @@ public class RegisterTest extends TestBase{
 		
 	}
 	
-	@Test(priority=4, enabled=false)
+	@Test(priority=4)
 	public void verifyRegisterWithNoDetails() {
 		registerpage.clickOnContinueButton();
 		Assert.assertTrue(registerpage.retrieveAllWarningMessages(dataprop.getProperty("policyWarningMessage"), dataprop.getProperty("firstNameWarningMessage"), 

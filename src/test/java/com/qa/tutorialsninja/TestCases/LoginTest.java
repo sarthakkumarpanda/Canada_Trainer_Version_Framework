@@ -29,7 +29,7 @@ public class LoginTest extends TestBase{
 		loginpage = landingpage.navigateToLoginPage();	
 	}
 
-	@Test(priority=1, dataProvider = "TN", dataProviderClass = ExcelCode.class, enabled = false)
+	@Test(priority=1, dataProvider = "TN", dataProviderClass = ExcelCode.class)
 	public void verifyLoginWithValidCredentials(String email, String password) {
 		accountpage = loginpage.navigateToAccountPage(email, password);	
 		Assert.assertTrue(accountpage.validateEditAccountInfoLinkDisplayStatus());
